@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+f="$(mktemp)"
+cat > "$f"
+"${EDITOR:-vim}" "$f" > /dev/tty
+ee="$?"
+if [ "$ee" == "0" ]; then
+	c="$(<$f)"
+	rm "$f"
+	printf '%s' "$c"
+else
+	rm "$f"
+	echo "Editor exited with code $ee, and not success exit code" 1>&2
+	exit "$ee"
+fi
