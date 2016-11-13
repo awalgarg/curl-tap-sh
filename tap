@@ -5,9 +5,8 @@ cat > "$f"
 "${EDITOR:-vim}" "$f" > /dev/tty
 ee="$?"
 if [ "$ee" == "0" ]; then
-	c="$(<$f)"
+	cat "$f"
 	rm "$f"
-	printf '%s' "$c"
 else
 	rm "$f"
 	echo "Editor exited with code $ee, and not success exit code" 1>&2
