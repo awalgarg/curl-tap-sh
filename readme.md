@@ -3,7 +3,7 @@
 So, the internet seems to have a lot of software with the installation method
 being in the infamous `curl .. | sh` format. People don't like this because
 what `curl` downloads might have been messed with by someone in between
-depending on the specifics. But people still use this method becaue it is
+depending on the specifics. But people still use this method because it is
 convenient.
 
 Awal is here to present a solution. Included in this repo is a script,
