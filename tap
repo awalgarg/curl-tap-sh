@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 f="$(mktemp)"
-trap "rm '$f'" 0 # remove temp file at exit
+trap "rm '$f'" EXIT # remove temp file at exit
 cat > "$f"
 "${EDITOR:-vim}" "$f" > /dev/tty
 ee="$?"
